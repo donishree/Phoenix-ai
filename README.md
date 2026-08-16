@@ -1,3 +1,4 @@
+
 # 🦅 Phoenix AI
 
 ## Explainable Machine Learning for Webpage Performance Decline Risk
@@ -18,7 +19,7 @@ The system combines:
 
 ## 🎯 Project Goal
 
-The goal of Phoenix AI is to help identify webpages that may need optimization by analyzing observable search-performance signals.
+The goal of Phoenix AI is to identify webpages that may need optimization by analyzing observable search-performance signals.
 
 The system classifies webpages into three risk categories:
 
@@ -52,7 +53,7 @@ along with content-related features such as:
 - Word Count
 - Title Length
 - Inlinks
-- and other webpage attributes.
+- Other webpage attributes
 
 ---
 
@@ -110,8 +111,6 @@ Two models were trained and evaluated.
 Logistic Regression was used as the baseline classification model.
 
 **Accuracy: 56%**
-
-This baseline provided a reference point for evaluating the more interpretable tree-based model.
 
 ### Decision Tree
 
@@ -174,7 +173,7 @@ They should not be interpreted as proof that these variables independently cause
 
 Phoenix AI includes a separate **rule-based recommendation layer**.
 
-The recommendations are NOT generated directly by the machine learning model.
+The recommendations are **not generated directly by the machine learning model**.
 
 The system can flag situations such as:
 
@@ -190,139 +189,163 @@ This separation keeps the machine learning prediction and recommendation logic t
 
 ## 🏗️ System Workflow
 
-```text
-Webpage/Search Performance Data
-              ↓
-       Data Preprocessing
-              ↓
-     Feature Engineering
-              ↓
-        Risk Labeling
-              ↓
-        Train/Test Split
-              ↓
-      Machine Learning Model
-              ↓
-       Risk Classification
-              ↓
-         Explainability
-              ↓
-   Rule-Based Recommendations
-              ↓
-        Phoenix AI Output
+    Webpage/Search Performance Data
+                  ↓
+           Data Preprocessing
+                  ↓
+         Feature Engineering
+                  ↓
+            Risk Labeling
+                  ↓
+            Train/Test Split
+                  ↓
+        Machine Learning Model
+                  ↓
+         Risk Classification
+                  ↓
+            Explainability
+                  ↓
+     Rule-Based Recommendations
+                  ↓
+           Phoenix AI Output
 
-🌐 Live Application
+---
+
+## 🌐 Live Application
 
 Phoenix AI has been deployed as a Streamlit web application.
 
 Users can upload a CSV file and receive:
 
-Risk predictions
-Confidence scores
-Feature-based insights
-Content optimization recommendations
-🚀 Try Phoenix AI
+- Risk predictions
+- Confidence scores
+- Feature-based insights
+- Content optimization recommendations
 
-Open the Live Phoenix AI Application
+### 🚀 Try Phoenix AI
 
-🛠️ Technologies Used
-Python
-Pandas
-NumPy
-Scikit-learn
-Matplotlib
-Seaborn
-Joblib
-Streamlit
-Git
-GitHub
-📁 Project Structure
-Phoenix-ai/
-│
-├── app.py
-├── requirements.txt
-├── README.md
-│
-├── data/
-├── notebooks/
-├── models/
-├── reports/
-└── screenshots/
-🚀 Running the Project Locally
+[Open the Live Phoenix AI Application](https://phoenix-ai-hvoomxgzvzme8fk2ymw52b.streamlit.app/)
 
-Clone the repository:
+---
 
-git clone https://github.com/donishree/Phoenix-ai.git
+## 🛠️ Technologies Used
 
-Move into the project directory:
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Joblib
+- Streamlit
+- Git
+- GitHub
 
-cd Phoenix-ai
+---
 
-Install the required dependencies:
+## 📁 Project Structure
 
-pip install -r requirements.txt
+    Phoenix-ai/
+    │
+    ├── app.py
+    ├── requirements.txt
+    ├── README.md
+    │
+    ├── data/
+    ├── notebooks/
+    ├── models/
+    ├── reports/
+    └── screenshots/
 
-Run the Streamlit application:
+---
 
-streamlit run app.py
+## 🚀 Running the Project Locally
+
+### 1. Clone the repository
+
+    git clone https://github.com/donishree/Phoenix-ai.git
+
+### 2. Move into the project directory
+
+    cd Phoenix-ai
+
+### 3. Install the required dependencies
+
+    pip install -r requirements.txt
+
+### 4. Run the Streamlit application
+
+    streamlit run app.py
 
 The application will then open in your browser.
 
-⚠️ Limitations
-1. Proxy Target
+---
+
+## ⚠️ Limitations
+
+### 1. Proxy Target
 
 The dataset does not contain time-series information.
 
-Therefore, the Risk_Label represents a performance-risk proxy rather than direct measurement of decline over time.
+Therefore, the `Risk_Label` represents a performance-risk proxy rather than direct measurement of decline over time.
 
-2. Class Imbalance
+### 2. Class Imbalance
 
 The At Risk category contains only 85 examples compared with thousands of Stable examples.
 
 Consequently, the model performs much less reliably on this minority class.
 
-3. Dataset Scope
+### 3. Dataset Scope
 
 The model is trained on a public dataset rather than the original FlyRank internship dataset.
 
 Therefore, its results should not be interpreted as evidence of performance on FlyRank's internal data.
 
-4. Recommendations
+### 4. Recommendations
 
 The recommendation system is rule-based rather than learned by the ML model.
 
-5. Generalization
+### 5. Generalization
 
 The model should be tested on additional datasets before being treated as a production-grade webpage optimization system.
 
-🔮 Future Work
+---
+
+## 🔮 Future Work
 
 Future versions of Phoenix AI could include:
 
-Real longitudinal Google Search Console data
-More diverse webpage datasets
-Better representation of the At Risk class
-Time-series decline prediction
-Additional machine learning models
-More advanced explainability
-Automated content recommendations
-Historical performance monitoring
-Model retraining pipelines
-Larger-scale production deployment
-👩‍💻 Author
+- Real longitudinal Google Search Console data
+- More diverse webpage datasets
+- Better representation of the At Risk class
+- Time-series decline prediction
+- Additional machine learning models
+- More advanced explainability
+- Automated content recommendations
+- Historical performance monitoring
+- Model retraining pipelines
+- Larger-scale production deployment
 
-Donishree
+---
+
+## 👩‍💻 Author
+
+**Donishree**
 
 B.Tech Computer Science and Engineering — Artificial Intelligence & Machine Learning
 
-📌 Project Context
+---
 
-Phoenix AI was developed as an extension of my AI Fluency internship capstone work at FlyRank, evolving the original research concept into an implemented machine learning pipeline and deployed application.
+## 📌 Project Context
 
-🔗 Project Links
+Phoenix AI was developed as an extension of my AI Fluency internship capstone work at **FlyRank**, evolving the original research concept into an implemented machine learning pipeline and deployed application.
 
-GitHub:
+---
+
+## 🔗 Project Links
+
+**GitHub:**  
 https://github.com/donishree/Phoenix-ai
 
-Live Application:
+**Live Application:**  
 https://phoenix-ai-hvoomxgzvzme8fk2ymw52b.streamlit.app/
